@@ -2,7 +2,7 @@ import type { EducationItem, Certification } from "@/types";
 
 export const education: EducationItem[] = [
   {
-    institution: "University name coming soon",
+    institution: "University of Haripur",
     degree: "Bachelor of Science in Artificial Intelligence (BS AI)",
     duration: "In progress",
     cgpa: "3.75",
