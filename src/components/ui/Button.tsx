@@ -1,5 +1,10 @@
 import { forwardRef } from "react";
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import type {
+  ButtonHTMLAttributes,
+  AnchorHTMLAttributes,
+  ReactNode,
+} from "react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "secondary" | "ghost" | "text" | "icon";
@@ -16,7 +21,8 @@ const variants: Record<Variant, string> = {
   ghost:
     "border border-border-subtle text-text-secondary hover:border-accent-blue/40 hover:text-text-primary",
   text: "text-accent-blue hover:text-accent-cyan px-0",
-  icon: "rounded-full border border-border-subtle text-text-secondary hover:text-accent-blue hover:border-accent-blue/50 p-2.5",
+  icon:
+    "rounded-full border border-border-subtle text-text-secondary hover:text-accent-blue hover:border-accent-blue/50 p-2.5",
 };
 
 const sizes: Record<Size, string> = {
@@ -32,38 +38,80 @@ interface CommonProps {
 }
 
 type ButtonProps = CommonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & { as?: "button" };
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    as?: "button";
+  };
 
-type LinkProps = CommonProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & { as: "a" };
+type AnchorProps = CommonProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    as: "a";
+  };
+
+type RouterLinkProps = CommonProps & {
+  as: typeof Link;
+  to: string;
+};
+
+type Props = ButtonProps | AnchorProps | RouterLinkProps;
 
 export const Button = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
-  ButtonProps | LinkProps
->(({ variant = "primary", size = "md", className, children, as, ...rest }, ref) => {
-  const classes = cn(base, variants[variant], variant !== "icon" && sizes[size], className);
+  Props
+>(
+  (
+    {
+      variant = "primary",
+      size = "md",
+      className,
+      children,
+      as,
+      ...rest
+    },
+    ref
+  ) => {
+    const classes = cn(
+      base,
+      variants[variant],
+      variant !== "icon" && sizes[size],
+      className
+    );
 
-  if (as === "a") {
+    if (as === Link) {
+      const { to, ...linkProps } = rest as RouterLinkProps;
+
+      return (
+        <Link
+          to={to}
+          className={classes}
+          {...linkProps}
+        >
+          {children}
+        </Link>
+      );
+    }
+
+    if (as === "a") {
+      return (
+        <a
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          className={classes}
+          {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <a
-        ref={ref as React.Ref<HTMLAnchorElement>}
+      <button
+        ref={ref as React.Ref<HTMLButtonElement>}
         className={classes}
-        {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
       >
         {children}
-      </a>
+      </button>
     );
   }
-
-  return (
-    <button
-      ref={ref as React.Ref<HTMLButtonElement>}
-      className={classes}
-      {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
-    >
-      {children}
-    </button>
-  );
-});
+);
 
 Button.displayName = "Button";

@@ -4,6 +4,7 @@ import skylineImg from "@/assets/images/projects/skyline.png";
 import crmImg from "@/assets/images/projects/crm.png";
 import stickyImg from "@/assets/images/projects/sticky-notes.png";
 import aiBuilderImg from "@/assets/images/projects/ai-website-builder.png";
+import titanicMlImg from "@/assets/images/projects/titaniccsv.png";
 
 /**
  * Add a new project by appending an object here — cards, the featured
@@ -11,7 +12,87 @@ import aiBuilderImg from "@/assets/images/projects/ai-website-builder.png";
  * To swap a screenshot, replace the matching file in
  * src/assets/images/projects/ and keep the same filename.
  */
+
+
 export const projects: Project[] = [
+
+  {
+  slug: "titanic-ml-prediction-platform",
+  title: "Titanic ML Prediction Platform",
+  category: "Machine Learning / Production Frontend",
+  status: "Completed",
+  description:
+    "A production-grade frontend for a deployed FastAPI machine learning API featuring live prediction, real-time monitoring, drift detection, A/B testing metrics, and a modern glassmorphic interface.",
+
+  problem:
+    "Machine learning projects often stop at model training and lack a polished production interface for monitoring, inference, and deployment visualization.",
+
+  solution:
+    "Built a fully responsive React application that communicates with a live FastAPI backend, providing prediction workflows, health monitoring, Champion–Challenger metrics, drift visualization, API documentation, and production-style dashboards.",
+
+  technologies: [
+    "React 19",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Framer Motion",
+    "React Hook Form",
+    "Zod",
+    "Axios",
+    "Recharts",
+    "FastAPI",
+    "Machine Learning",
+    "Vercel"
+  ],
+
+  features: [
+    "Live Titanic survival prediction",
+    "Production dashboard with real-time metrics",
+    "Feature drift visualization",
+    "Champion vs Challenger monitoring",
+    "Automatic API polling",
+    "Health monitoring",
+    "Responsive glassmorphism UI",
+    "API documentation page",
+    "Dark mode interface",
+    "Secure API key integration"
+  ],
+
+  challenges: [
+    "Integrating multiple ML monitoring endpoints into one dashboard",
+    "Building reusable polling hooks for live data",
+    "Handling backend cold starts gracefully",
+    "Creating production-style charts from dynamic API responses",
+    "Designing a responsive monitoring interface from scratch"
+  ],
+
+  lessonsLearned:
+    "This project strengthened my understanding of frontend architecture for production ML systems, API integration, reusable React hooks, TypeScript, dashboard visualization, deployment workflows, and real-world software engineering practices.",
+
+  skillsDemonstrated: [
+    "React",
+    "TypeScript",
+    "Machine Learning",
+    "API Integration",
+    "Dashboard Development",
+    "Data Visualization",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Deployment",
+    "Production UI"
+  ],
+
+  links: {
+  liveDemo: "https://titanicml.vercel.app",
+  github: "https://github.com/ahmedali2155/titanic-ml-prediction-platform",
+  api: "https://prosensia-ml-api.onrender.com/docs",
+},
+
+  image: titanicMlImg,
+
+  featured: true,
+},
+
   {
     slug: "employee-management-system",
     title: "Employee Management System",
@@ -75,7 +156,7 @@ export const projects: Project[] = [
     image: skylineImg,
     featured: true,
   },
-  {
+      {
     slug: "crm-system",
     title: "CRM System",
     category: "Full Stack / Firebase",
@@ -101,8 +182,34 @@ export const projects: Project[] = [
     lessonsLearned:
       "Gained first hands-on experience with a real backend service and understood the trade-offs between local and cloud persistence.",
     skillsDemonstrated: ["Firebase", "CRUD", "React", "Cloud Database"],
-    links: {},
+    links: {
+      liveDemo: "https://ahmed-crm.vercel.app/",
+    },
     image: crmImg,
+    featured: true,
+  },
+  {
+    slug: "ai-website-builder",
+    title: "AI Website Builder",
+    category: "AI / Frontend",
+    status: "In Development",
+    description:
+      "An AI-assisted website generation platform designed to create websites through intelligent, guided workflows.",
+    problem:
+      "Building a website from scratch is slow for non-technical users and repetitive even for experienced developers.",
+    solution:
+      "An in-progress platform combining a React frontend with planned AI APIs to generate site structure and content from user input.",
+    technologies: ["React", "Vite", "JavaScript", "AI APIs (planned)"],
+    features: [
+      "AI-assisted layout generation (planned)",
+      "Guided website creation workflow",
+      "React-based builder interface",
+    ],
+    skillsDemonstrated: ["AI Integration", "Frontend Development", "UI Design"],
+    links: {
+      liveDemo: "https://ahmed-buildai.vercel.app/",
+    },
+    image: aiBuilderImg,
     featured: true,
   },
   {
@@ -134,30 +241,7 @@ export const projects: Project[] = [
     image: stickyImg,
     featured: true,
   },
-  {
-    slug: "ai-website-builder",
-    title: "AI Website Builder",
-    category: "AI / Frontend",
-    status: "Completed",
-    description:
-      "An AI-assisted website generation platform designed to create websites through intelligent, guided workflows.",
-    problem:
-      "Building a website from scratch is slow for non-technical users and repetitive even for experienced developers.",
-    solution:
-      "An in-progress platform combining a React frontend with planned AI APIs to generate site structure and content from user input.",
-    technologies: ["React", "Vite", "JavaScript", "AI APIs (planned)"],
-    features: [
-      "AI-assisted layout generation (planned)",
-      "Guided website creation workflow",
-      "React-based builder interface",
-    ],
-    skillsDemonstrated: ["AI Integration", "Frontend Development", "UI Design"],
-    links: {
-      liveDemo: "https://ahmed-buildai.vercel.app/",
-    },
-    image: aiBuilderImg,
-    featured: true,
-  },
+
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

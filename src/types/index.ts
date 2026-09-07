@@ -45,6 +45,7 @@ export interface Internship {
 export interface ProjectLinks {
   github?: string;
   liveDemo?: string;
+  api?: string;
 }
 
 export interface Project {
