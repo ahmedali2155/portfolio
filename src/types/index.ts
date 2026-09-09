@@ -40,6 +40,7 @@ export interface Internship {
   skillsGained: string[];
   tags: string[];
   repository?: string;
+  researchPaper?: string;
 }
 
 export interface ProjectLinks {

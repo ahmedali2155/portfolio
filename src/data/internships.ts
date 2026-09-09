@@ -6,67 +6,81 @@ import type { Internship } from "@/types";
  */
 export const internships: Internship[] = [
     {
-    slug: "flyrank",
-    company: "FlyRank",
-    industry: "Artificial Intelligence • Search Intelligence • SEO Technology",
-    role: "Machine Learning Intern",
-    employmentType: "Internship",
-    workMode: "Remote (USA-based company)",
-    status: "Current",
-    startDate: "August 2026",
-    endDate: "Present",
-    location: "Remote (USA)",
+  slug: "flyrank",
+  company: "FlyRank",
+  industry: "Artificial Intelligence • Search Intelligence • SEO Technology",
+  role: "Machine Learning Intern",
+  employmentType: "Internship",
+  workMode: "Remote (USA-based company)",
+  status: "Current",
+  startDate: "August 2026",
+  endDate: "Present",
+  location: "Remote (USA)",
 
-    repository:
-      "https://github.com/ahmedali2155/flyrank-ml-internship",
+  repository:
+    "https://github.com/ahmedali2155/flyrank-ml-internship",
 
+  researchPaper: "/flyrank-research-paper",
 
-    summary:
-      "Working on AI-powered search intelligence systems, NLP-driven content processing, and scalable FastAPI backend services for a USA-based AI company.",
-    responsibilities: [
-      "Working on AI-powered search systems",
-      "Exploring Natural Language Processing (NLP) techniques",
-      "Building and improving backend APIs with FastAPI",
-      "Reading and understanding large production codebases",
-      "Working with structured data processing pipelines",
-      "Contributing to AI-oriented engineering tasks",
-    ],
-    technologies: [
-      "Python",
-      "FastAPI",
-      "Machine Learning",
-      "NLP",
-      "REST APIs",
-      "Git",
-      "GitHub",
-    ],
-    achievements: [
-      "Strengthened Python and backend development skills",
-      "Explored production-level NLP and search intelligence concepts",
-      "Improved code reading and comprehension on large codebases",
-      "Learned professional Git workflows in a team setting",
-    ],
-    challenges: [
-      "Understanding complex AI codebases",
-      "Learning search intelligence architecture",
-      "Navigating modular, enterprise-level Python projects",
-    ],
-    skillsGained: [
-      "AI Software Development",
-      "Search Intelligence",
-      "NLP Fundamentals",
-      "FastAPI",
-      "Scalable Backend Design",
-    ],
-    tags: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "NLP",
-      "Search Intelligence",
-      "Python",
-      "FastAPI",
-    ],
-  },
+  summary:
+    "Working on AI-powered search intelligence systems, NLP-driven content processing, and scalable FastAPI backend services for a USA-based AI company.",
+
+  responsibilities: [
+    "Working on AI-powered search systems",
+    "Exploring Natural Language Processing (NLP) techniques",
+    "Building and improving backend APIs with FastAPI",
+    "Reading and understanding large production codebases",
+    "Working with structured data processing pipelines",
+    "Contributing to AI-oriented engineering tasks",
+  ],
+
+  technologies: [
+    "Python",
+    "FastAPI",
+    "Machine Learning",
+    "NLP",
+    "REST APIs",
+    "Git",
+    "GitHub",
+  ],
+
+  achievements: [
+    "Strengthened Python and backend development skills",
+    "Explored production-level NLP and search intelligence concepts",
+    "Improved code reading and comprehension on large codebases",
+    "Learned professional Git workflows in a team setting",
+    "Completed the ML-11 capstone research paper on predicting search click opportunities using Google Search Console data.",
+  ],
+
+  challenges: [
+    "Understanding complex AI codebases",
+    "Learning search intelligence architecture",
+    "Navigating modular, enterprise-level Python projects",
+  ],
+
+  skillsGained: [
+    "AI Software Development",
+    "Search Intelligence",
+    "Machine Learning",
+    "Random Forest Classification",
+    "NLP Fundamentals",
+    "FastAPI",
+    "Scalable Backend Design",
+    "Feature Engineering",
+    "Model Evaluation",
+  ],
+
+  tags: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Random Forest",
+    "NLP",
+    "Search Intelligence",
+    "Python",
+    "FastAPI",
+    "Research",
+  ],
+},
   
   {
     slug: "prosensia",
@@ -76,8 +90,8 @@ export const internships: Internship[] = [
     employmentType: "Internship",
     workMode: "Remote",
     status: "Completed",
-    startDate: "July 2026",
-    endDate: "Present",
+    startDate: "1 July 2026",
+    endDate: "31 August 2026",
     location: "Remote",
 
     repository:

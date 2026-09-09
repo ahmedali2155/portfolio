@@ -71,9 +71,9 @@ export default function ExperienceDetail() {
             {exp.summary}
           </p>
 
-          {/* GitHub Repository */}
-          {exp.repository && (
-            <div className="mt-8">
+          {/* Repository & Research Paper */}
+          <div className="mt-8 flex flex-wrap gap-4">
+            {exp.repository && (
               <a
                 href={exp.repository}
                 target="_blank"
@@ -84,8 +84,19 @@ export default function ExperienceDetail() {
                 <span>View GitHub Repository</span>
                 <ExternalLink size={16} />
               </a>
-            </div>
-          )}
+            )}
+
+            {exp.researchPaper && (
+              <Link
+                to={exp.researchPaper}
+                className="inline-flex items-center gap-3 rounded-xl border border-accent-blue/20 bg-accent-blue/10 px-5 py-3 text-sm font-medium text-accent-blue transition-all duration-300 hover:bg-accent-blue hover:text-white"
+              >
+                📄
+                <span>Read Research Paper</span>
+                <ArrowRight size={16} />
+              </Link>
+            )}
+          </div>
         </Container>
       </section>
 
