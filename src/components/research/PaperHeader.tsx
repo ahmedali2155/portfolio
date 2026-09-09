@@ -10,10 +10,14 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 interface PaperHeaderProps {
+  title?: string;
   githubUrl: string;
 }
 
-export function PaperHeader({ githubUrl }: PaperHeaderProps) {
+export function PaperHeader({
+  title = "Predicting Content Click Opportunities Using Google Search Console Performance Data",
+  githubUrl,
+}: PaperHeaderProps) {
   return (
     <section className="relative overflow-hidden border-b border-border-subtle">
       {/* Ambient background */}
@@ -39,23 +43,21 @@ export function PaperHeader({ githubUrl }: PaperHeaderProps) {
               Back to Portfolio
             </Link>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <Button
-                as="a"
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="secondary"
-                size="sm"
-              >
-                <Github size={16} />
-                GitHub Repository
-                <ExternalLink size={14} />
-              </Button>
-            </div>
+            <Button
+              as="a"
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              size="sm"
+            >
+              <Github size={16} />
+              GitHub Repository
+              <ExternalLink size={14} />
+            </Button>
           </div>
 
-          {/* Paper metadata */}
+          {/* Badges */}
           <div className="mb-6 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface-card px-3 py-1.5 text-xs font-medium text-text-secondary">
               <BookOpen size={13} />
@@ -75,19 +77,18 @@ export function PaperHeader({ githubUrl }: PaperHeaderProps) {
             </p>
 
             <h1 className="max-w-4xl font-heading text-3xl font-bold leading-tight text-text-primary sm:text-4xl md:text-5xl lg:text-6xl">
-              Predicting Content Click Opportunities Using Google Search
-              Console Performance Data
+              {title}
             </h1>
 
             <p className="mt-7 max-w-3xl text-base leading-8 text-text-muted md:text-lg">
               An empirical machine learning study evaluating whether Google
-              Search Console performance signals can help identify content
-              with a higher likelihood of receiving search clicks and support
-              content optimization decisions.
+              Search Console performance signals can predict search click
+              opportunities while minimizing feature leakage and maintaining
+              realistic model evaluation.
             </p>
           </div>
 
-          {/* Author / study information */}
+          {/* Paper Info */}
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-card border border-border-subtle bg-surface-card p-4">
               <p className="text-xs uppercase tracking-wide text-text-muted">
@@ -126,7 +127,7 @@ export function PaperHeader({ githubUrl }: PaperHeaderProps) {
             </div>
           </div>
 
-          {/* Topic tags */}
+          {/* Tags */}
           <div className="mt-6 flex flex-wrap gap-2">
             {[
               "Machine Learning",
