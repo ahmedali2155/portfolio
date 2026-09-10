@@ -691,17 +691,21 @@ export default function ResearchPaper() {
             </p>
 
             <p className="mt-5 leading-8 text-text-muted">
-              Built on the FlyRank ML Internship dataset.
+              <strong>Built on the FlyRank ML Internship dataset.</strong>
             </p>
 
-            <a
-              href="https://flyrank.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex text-accent-blue hover:underline"
-            >
-              https://flyrank.ai
-            </a>
+            <p className="mt-2 leading-8 text-text-muted">
+              Data Source:
+              <a
+                href="https://flyrank.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-accent-blue hover:underline"
+              >
+                https://flyrank.ai
+              </a>
+            </p>
+
 
             <div className="mt-8 border-t border-border-subtle pt-6">
               <h3 className="text-lg font-semibold text-text-primary">
